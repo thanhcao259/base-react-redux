@@ -1,5 +1,6 @@
 import React from 'react'
 import UserInfor from './UserInfor';
+import DisplayInfor from './DisplayInfor';
 
 class MyComponent extends React.Component {
 
@@ -16,6 +17,10 @@ class MyComponent extends React.Component {
                     onMouseOver={this.handleMouseOver}>Hover Me</button> */}
 
                 <UserInfor/>
+                <br/>
+                <DisplayInfor name="Messi" age={40}/>
+                <hr/>
+                <DisplayInfor name={"MPape"} age="35"/>
             </div>
         )
     }
