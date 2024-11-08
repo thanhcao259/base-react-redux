@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+
 import '../style/DisplayInfor.scss';
 import logo from './../logo.svg';
 
@@ -53,9 +54,26 @@ const DisplayInfor = (props) => {
      * DESTRUCTURING
      */
     const { listUser } = props;
+
+    /**
+     * useState
+     * [var_state, setState_method] = useState(init_value);
+     */
+    const [isShowList, setShowList]= useState(true);
+
+    const handleShowHide = () => {
+        setShowList(!isShowList);
+
+    }
+
     return (
         <div className="display-infor-container">
-            { true && 
+            <div className="show-hide">
+                {/* <span onClick={()=>{handleShowHide()}}> */}
+                <span onClick={handleShowHide}>
+                    {isShowList ? "Hide " : "Show " }list user</span>
+            </div>
+            { isShowList && 
             <div>
                 {listUser.map((item, index) => {
 
