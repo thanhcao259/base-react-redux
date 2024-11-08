@@ -7,12 +7,21 @@ class DisplayInfor extends React.Component{
         /**
          * DESTRUCTURE CODE
          */
-        const {age, name} = this.props;
+        // const {age, name} = this.props;
+        const {listUser} = this.props;
         return(
             <>
             <div>
-                <div>My name is {name}</div>
-                <div>I'm {age} years old</div>
+                {listUser.map((item, index)=>{
+                    return(
+                    <div key={item.id}>
+                        <div>My name is {item.name}</div>
+                        <div>I'm {item.age} years old</div>
+                        <hr/> 
+                    </div>
+         
+                    )
+                })}
             </div>
             </>
         )
