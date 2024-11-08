@@ -36,14 +36,6 @@ class MyComponent extends React.Component {
 
         return (
             <div>
-                {/* Nen viet onClick.... theo arrow func */}
-                {/* <button className='btn-click'
-                    onClick={(e) => this.handleClick(e)}>Click</button> */}
-                
-                {/* Khong nen viet ntn */}
-                {/* <button className='btn-hover'
-                    onMouseOver={this.handleMouseOver}>Hover Me</button> */}
-
                 <AddUserInfor 
                     // handleAddNewUser (left) is name of props
                     // Might rename it as add_new_user_props, etc
