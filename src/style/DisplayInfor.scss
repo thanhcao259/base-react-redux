@@ -1,9 +1,12 @@
-
-.display-infor-container{
+.display-infor-container {
+  img {
+    width: 20vw;
+    height: 20vh;
+  }
   .red {
     color: red;
   }
   .green {
-    color: green
-  }  
+    color: green;
+  }
 }

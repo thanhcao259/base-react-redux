@@ -13,15 +13,24 @@ class MyComponent extends React.Component {
     }
 
     handleAddNewUser = (newObj) => {
-        console.log(newObj);
         /** USING SPEARD SHEET 
          * to insert new obj to existing list
          * 1. setState({}) for existing list
          */
         this.setState({
             listUser: 
-                [...this.state.listUser, newObj]
+                [newObj, ...this.state.listUser]
         })
+    }
+
+    handleDelUser = (existObj) => {
+        // console.log('>>>extObj', existObj);
+        let listUserClone = this.state.listUser;
+        listUserClone = listUserClone.filter((item)=> 
+            item.id  !== existObj.id)
+        this.setState({
+            listUser: listUserClone
+        });
     }
     render() {
 
@@ -43,6 +52,7 @@ class MyComponent extends React.Component {
                 <br/>
                 {/* <DisplayInfor name={"Messi"} age={40}/> */}
                 <DisplayInfor listUser={this.state.listUser}
+                    handleDelUser={this.handleDelUser}
                     />
             </div>
         )
