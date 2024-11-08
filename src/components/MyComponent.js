@@ -1,5 +1,5 @@
 import React from 'react'
-import UserInfor from './UserInfor';
+import AddUserInfor from './AddUserInfor';
 import DisplayInfor from './DisplayInfor';
 
 class MyComponent extends React.Component {
@@ -10,6 +10,18 @@ class MyComponent extends React.Component {
             {id: '002', name: "Messi", age: "20"},
             {id: '003', name: "Tom Cursi", age: "35"},
         ]
+    }
+
+    handleAddNewUser = (newObj) => {
+        console.log(newObj);
+        /** USING SPEARD SHEET 
+         * to insert new obj to existing list
+         * 1. setState({}) for existing list
+         */
+        this.setState({
+            listUser: 
+                [...this.state.listUser, newObj]
+        })
     }
     render() {
 
@@ -23,10 +35,15 @@ class MyComponent extends React.Component {
                 {/* <button className='btn-hover'
                     onMouseOver={this.handleMouseOver}>Hover Me</button> */}
 
-                <UserInfor/>
+                <AddUserInfor 
+                    // handleAddNewUser (left) is name of props
+                    // Might rename it as add_new_user_props, etc
+                    // {this.handle...} to refer to this handle... function
+                    handleAddNewUser={this.handleAddNewUser}/>
                 <br/>
                 {/* <DisplayInfor name={"Messi"} age={40}/> */}
-                <DisplayInfor listUser={this.state.listUser}/>
+                <DisplayInfor listUser={this.state.listUser}
+                    />
             </div>
         )
     }
