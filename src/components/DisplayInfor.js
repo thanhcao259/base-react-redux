@@ -50,13 +50,10 @@ import logo from './../logo.svg';
 
 const DisplayInfor = (props) => {
 
-    /**
-     * DESTRUCTURING
-     */
+    /** DESTRUCTURING */
     const { listUser } = props;
 
-    /**
-     * useState
+    /**  useState()
      * [var_state, setState_method] = useState(init_value);
      */
     const [isShowList, setShowList]= useState(true);
